@@ -1,17 +1,16 @@
+/* eslint-disable import/no-cycle */
 /* eslint-disable quotes */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/button-has-type */
 /* eslint-disable react/prop-types */
 /* eslint-disable import/no-unresolved */
 /* eslint-disable import/extensions */
-import React from "react";
+import React, { useContext } from "react";
 import Recipe from "./Recipe";
+import { RecipeContext } from "./App";
 
-export default function RecipeList({
-  recipes,
-  handleRecipeAdd,
-  handleRecipeDelete,
-}) {
+export default function RecipeList({ recipes }) {
+  const { handleRecipeAdd, handleRecipeDelete } = useContext(RecipeContext);
   return (
     <div className="recipe-list">
       <div>

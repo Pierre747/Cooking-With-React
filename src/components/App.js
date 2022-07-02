@@ -1,3 +1,6 @@
+/* eslint-disable react/jsx-no-constructed-context-values */
+/* eslint-disable no-use-before-define */
+/* eslint-disable import/no-cycle */
 /* eslint-disable import/no-unresolved */
 /* eslint-disable no-useless-return */
 /* eslint-disable padded-blocks */
@@ -14,8 +17,15 @@ import RecipeList from "./RecipeList";
 import { sampleRecipes } from "../data/data";
 import "../css/app.css";
 
+export const RecipeContext = React.createContext();
+
 function App() {
   const [recipes, setRecipes] = useState(sampleRecipes);
+
+  const recipeContextValue = {
+    handleRecipeAdd,
+    handleRecipeDelete,
+  };
 
   function handleRecipeAdd() {
     const newRecipe = {
@@ -40,11 +50,9 @@ function App() {
   }
 
   return (
-    <RecipeList
-      recipes={recipes}
-      handleRecipeAdd={handleRecipeAdd}
-      handleRecipeDelete={handleRecipeDelete}
-    />
+    <RecipeContext.Provider value={recipeContextValue}>
+      <RecipeList recipes={recipes} />
+    </RecipeContext.Provider>
   );
 }
 
