@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+/* eslint-disable no-multiple-empty-lines */
 /* eslint-disable react/jsx-no-constructed-context-values */
 /* eslint-disable no-use-before-define */
 /* eslint-disable import/no-cycle */
@@ -11,7 +13,7 @@
 /* eslint-disable indent */
 /* eslint-disable no-undef */
 /* eslint-disable semi */
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import RecipeList from "./RecipeList";
 import { sampleRecipes } from "../data/data";
@@ -19,8 +21,20 @@ import "../css/app.css";
 
 export const RecipeContext = React.createContext();
 
+const LOCAL_STORAGE_KEY = "cookingWithReact.recipes";
+
 function App() {
-  const [recipes, setRecipes] = useState(sampleRecipes);
+  const [recipes, setRecipes] = useState(() => {
+    const recipeJSON = localStorage.getItem(LOCAL_STORAGE_KEY);
+    if (recipeJSON == null) {
+      return sampleRecipes;
+    }
+    return JSON.parse(recipeJSON);
+  });
+
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(recipes));
+  }, [recipes]);
 
   const recipeContextValue = {
     handleRecipeAdd,

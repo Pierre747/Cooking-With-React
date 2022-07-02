@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable import/no-cycle */
 /* eslint-disable quotes */
 /* eslint-disable import/no-unresolved */
@@ -18,6 +19,7 @@ export default function Recipe({
   ingredients,
 }) {
   const { handleRecipeDelete } = useContext(RecipeContext);
+
   return (
     <div className="recipe">
       <div className="recipe__header">
