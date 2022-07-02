@@ -18,6 +18,7 @@ import { v4 as uuidv4 } from "uuid";
 import RecipeList from "./RecipeList";
 import { sampleRecipes } from "../data/data";
 import "../css/app.css";
+import RecipeEdit from "./RecipeEdit";
 
 export const RecipeContext = React.createContext();
 
@@ -66,6 +67,7 @@ function App() {
   return (
     <RecipeContext.Provider value={recipeContextValue}>
       <RecipeList recipes={recipes} />
+      <RecipeEdit />
     </RecipeContext.Provider>
   );
 }
