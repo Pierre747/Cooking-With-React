@@ -1,3 +1,4 @@
+/* eslint-disable arrow-body-style */
 /* eslint-disable import/no-cycle */
 /* eslint-disable quotes */
 /* eslint-disable no-unused-vars */
@@ -10,17 +11,14 @@ import Recipe from "./Recipe";
 import { RecipeContext } from "./App";
 
 export default function RecipeList({ recipes }) {
-  const { handleRecipeAdd, handleRecipeDelete } = useContext(RecipeContext);
+  const { handleRecipeAdd } = useContext(RecipeContext);
+
   return (
     <div className="recipe-list">
       <div>
-        {recipes.map((recipe) => (
-          <Recipe
-            key={recipe.id}
-            handleRecipeDelete={handleRecipeDelete}
-            {...recipe}
-          />
-        ))}
+        {recipes.map((recipe) => {
+          return <Recipe key={recipe.id} {...recipe} />;
+        })}
       </div>
       <div className="recipe-list__add-recipe-btn-container">
         <button className="btn btn--primary" onClick={handleRecipeAdd}>

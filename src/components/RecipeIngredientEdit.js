@@ -4,14 +4,12 @@
 /* eslint-disable react/button-has-type */
 import React from "react";
 
-export default function RecipeIngredientEdit({
-  ingredient,
-  handleIngredientChange,
-}) {
+export default function RecipeIngredientEdit(props) {
+  const { ingredient, handleIngredientChange } = props;
+
   function handleChange(changes) {
     handleIngredientChange(ingredient.id, { ...ingredient, ...changes });
   }
-
   return (
     <>
       <input

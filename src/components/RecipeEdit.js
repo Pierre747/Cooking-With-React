@@ -8,7 +8,6 @@
 /* eslint-disable quotes */
 /* eslint-disable no-unused-vars */
 import React, { useContext } from "react";
-import Ingredient from "./Ingredient";
 import RecipeIngredientEdit from "./RecipeIngredientEdit";
 import { RecipeContext } from "./App";
 
@@ -20,10 +19,10 @@ export default function RecipeEdit({ recipe }) {
   }
 
   function handleIngredientChange(id, ingredient) {
-    const newIngredient = [...recipe.ingredient];
-    const index = newIngredient.findIndex((i) => i.id === id);
-    newIngredient[index] = ingredient;
-    handleChange({ ingredients: newIngredient });
+    const newIngredients = [...recipe.ingredients];
+    const index = newIngredients.findIndex((i) => i.id === id);
+    newIngredients[index] = ingredient;
+    handleChange({ ingredients: newIngredients });
   }
 
   return (
@@ -51,7 +50,7 @@ export default function RecipeEdit({ recipe }) {
           name="cookTime"
           id="cookTime"
           value={recipe.cookTime}
-          onInput={(e) => handleChange({ cookTime: e.target.value || "" })}
+          onInput={(e) => handleChange({ cookTime: e.target.value })}
           className="recipe-edit__input"
         />
         <label htmlFor="servings" className="recipe-edit__label">
@@ -94,7 +93,7 @@ export default function RecipeEdit({ recipe }) {
         ))}
       </div>
       <div className="recipe-edit__add-ingredient-btn-container">
-        <button className="btn btn--primary">Add Ingredients</button>
+        <button className="btn btn--primary">Add Ingredient</button>
       </div>
     </div>
   );

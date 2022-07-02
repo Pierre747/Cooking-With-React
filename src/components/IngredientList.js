@@ -1,3 +1,4 @@
+/* eslint-disable arrow-body-style */
 /* eslint-disable quotes */
 /* eslint-disable no-unused-vars */
 /* eslint-disable import/no-unresolved */
@@ -8,8 +9,8 @@ import React from "react";
 import Ingredient from "./Ingredient";
 
 export default function IngredientList({ ingredients }) {
-  const ingredientElements = ingredients.map((ingredient) => (
-    <Ingredient key={ingredient.id} {...ingredient} />
-  ));
+  const ingredientElements = ingredients.map((ingredient) => {
+    return <Ingredient key={ingredient.id} {...ingredient} />;
+  });
   return <div className="ingredient-grid">{ingredientElements}</div>;
 }
