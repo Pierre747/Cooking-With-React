@@ -1,0 +1,7 @@
+@import-normalize;
+@import 'font.css';
+*,
+*::before,
+*::after {
+	font-family: Gotham Rounded, sans-serif;
+}
