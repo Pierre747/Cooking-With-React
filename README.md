@@ -33,6 +33,8 @@ useEffect(() => {
 
 To deploy this project i've used <https://www.netlify.com>
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d9571c7d-d9a5-4041-8520-d6be3aa90891/deploy-status)](https://app.netlify.com/sites/wonderful-horse-05d5b7/deploys)
+
 ## Future features
 
 Many updates are actually in my mind...
