@@ -5,6 +5,8 @@ Hey guys ;)
 
 I've been practising my react skills with another amazing training you can find right here : <https://courses.webdevsimplified.com/>
 
+The goal of this exercise was to create a kind of *interactive recipe book* that allow the user to create, edit and delete any cooking recipe added on the website.
+
 Feel free to send me some improvements or impressions 😉
 
 **The application is available online on this URL** : <https://wonderful-horse-05d5b7.netlify.app/>
