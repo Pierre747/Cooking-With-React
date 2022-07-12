@@ -11,6 +11,12 @@ Feel free to send me some improvements or impressions 😉
 
 **The application is available online on this URL** : <https://wonderful-horse-05d5b7.netlify.app/>
 
+
+## A little preview :
+
+<img align="center" src="screen.png" alt="screenshot" width="100" />
+
+
 ## The toolBox 🛠️
 
 I've used several react hooks :
