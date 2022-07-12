@@ -14,7 +14,7 @@ Feel free to send me some improvements or impressions 😉
 
 ## A little preview :
 
-<img align="center" src="screen.png" alt="screenshot" width="100" />
+<img align="center" src="screen.png" alt="screenshot" width="1000" />
 
 
 ## The toolBox 🛠️
