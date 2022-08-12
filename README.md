@@ -9,7 +9,7 @@ The goal of this exercise was to create a kind of *interactive recipe book* that
 
 Feel free to send me some improvements or impressions 😉
 
-**The application is available online on this URL** : <https://wonderful-horse-05d5b7.netlify.app/>
+**The application is available online on this URL** : https://cooking-with-react-pierre.netlify.app/
 
 
 ## A little preview 🧐
